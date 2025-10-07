@@ -30,6 +30,7 @@ struct ContentView: View {
                     .frame(minHeight: 80)
                 
                 TextField("Твое число", text: $enter)
+                    //.keyboardType(.numberPad) чето не работает
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                 
@@ -69,12 +70,14 @@ struct ContentView: View {
                     Text("От")
                         .font(.headline)
                     TextField("Минимум", value: $minNumber, formatter: NumberFormatter())
+                        //.keyboardType(.numberPad) чето не работает
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
                     
                     Text("До")
                         .font(.headline)
                     TextField("Максимум", value: $maxNumber, formatter: NumberFormatter())
+                        //.keyboardType(.numberPad) чето не работает
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
                 }
@@ -118,19 +121,19 @@ struct ContentView: View {
     }
     
     func checkNumber() {
-        guard let moeChislo = Int(enter) else {
+        guard let myNumber = Int(enter) else {
             feedback = "Надо ввести число!"
             return
         }
         
-        if moeChislo < minNumber || moeChislo > maxNumber {
+        if myNumber < minNumber || myNumber > maxNumber {
             feedback = "Число должно быть от \(minNumber) до \(maxNumber)!"
             return
         }
         
         attempts += 1
         
-        if moeChislo == number {
+        if myNumber == number {
             feedback = "Ура! Ты угадал! Это было число \(number) 🎉"
             gameOver = true
             win += 1
@@ -139,7 +142,7 @@ struct ContentView: View {
             gameOver = true
             lose += 1
         } else {
-            if moeChislo < number {
+            if myNumber < number {
                 feedback = "Больше! 🔺 Осталось попыток: \(10 - attempts)"
             } else {
                 feedback = "Меньше! 🔻 Осталось попыток: \(10 - attempts)"
@@ -150,9 +153,10 @@ struct ContentView: View {
     }
     
     func saveSettings() {
-        if minNumber >= maxNumber {
+        guard minNumber < maxNumber else {
             minNumber = 1
             maxNumber = 100
+            return
         }
     }
 }

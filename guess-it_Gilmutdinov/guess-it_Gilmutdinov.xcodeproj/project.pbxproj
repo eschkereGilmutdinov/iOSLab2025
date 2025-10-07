@@ -35,16 +35,6 @@
 			path = "guess-it_Gilmutdinov";
 			sourceTree = "<group>";
 		};
-		E58FDB8F2E7DD39B004A220F /* guess-it_GilmutdinovTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "guess-it_GilmutdinovTests";
-			sourceTree = "<group>";
-		};
-		E58FDB992E7DD39B004A220F /* guess-it_GilmutdinovUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "guess-it_GilmutdinovUITests";
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				E58FDB7F2E7DD399004A220F /* guess-it_Gilmutdinov */,
-				E58FDB8F2E7DD39B004A220F /* guess-it_GilmutdinovTests */,
-				E58FDB992E7DD39B004A220F /* guess-it_GilmutdinovUITests */,
 				E58FDB7E2E7DD399004A220F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,9 +118,6 @@
 			dependencies = (
 				E58FDB8E2E7DD39B004A220F /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				E58FDB8F2E7DD39B004A220F /* guess-it_GilmutdinovTests */,
-			);
 			name = "guess-it_GilmutdinovTests";
 			packageProductDependencies = (
 			);
@@ -152,9 +137,6 @@
 			);
 			dependencies = (
 				E58FDB982E7DD39B004A220F /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				E58FDB992E7DD39B004A220F /* guess-it_GilmutdinovUITests */,
 			);
 			name = "guess-it_GilmutdinovUITests";
 			packageProductDependencies = (
@@ -195,6 +177,9 @@
 			);
 			mainGroup = E58FDB742E7DD399004A220F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E517E2552E9421E9008CD393 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E58FDB7E2E7DD399004A220F /* Products */;
 			projectDirPath = "";
@@ -605,6 +590,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E517E2552E9421E9008CD393 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = E58FDB752E7DD399004A220F /* Project object */;
 }
